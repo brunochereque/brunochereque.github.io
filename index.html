@@ -157,6 +157,20 @@
         <figure id="Improved_graph"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
+    <section>
+        <div class="chart-description">
+            <h2>CC 5: Scrapping inflation data from Peru's Central Bank</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                <a href="https://colab.research.google.com/drive/1DkUtqUFD-cAZYD3tl8lJwR6JOnPFYCVB#scrollTo=2hS7s_j0ZsCs" target="_blank">
+                    Click here
+                </a> to access my colab code with the scraping process. I chose this site because it provides historical inflation data for Lima, Peru, which is useful for economic analysis.
+            </p>
+        </div>
+        <figure id="Scrapped_graph"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -179,6 +193,7 @@
         vegaEmbed('#UK_Peers_productivity', "SS_Productivity_EU.json")
         vegaEmbed('#Replication_bad_graph', "Replication_bad_graph.json")
         vegaEmbed('#Improved_graph', "Improved_bad_graph.json")
+        vegaEmbed('#Scrapped_graph', "CC5_Inflation_Graph.json")
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
