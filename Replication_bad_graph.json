@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 450,
+    "height": 300,
+    "data": {
+      "values": [
+        {"candidate": "Gustavo Petro", "percentage": 23, "displayPercentage": 15},
+        {"candidate": "Sergio Fajardo", "percentage": 12, "displayPercentage": 12},
+        {"candidate": "Marta Lucía Ramírez", "percentage": 9, "displayPercentage": 9},
+        {"candidate": "Iván Zuluaga", "percentage": 6, "displayPercentage": 6},
+        {"candidate": "Alejandro Char", "percentage": 6, "displayPercentage": 6},
+        {"candidate": "Enrique Peñalosa", "percentage": 5, "displayPercentage": 5}
+      ]
+    },
+    "transform": [
+      {
+        "calculate": "datum.percentage + '%'",
+        "as": "percentageLabel"
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "color": "#D50000",
+          "width": 50
+        },
+        "encoding": {
+          "x": {
+            "field": "candidate",
+            "type": "nominal",
+            "sort": "-y",
+            "axis": {
+              "labelAngle": -20,
+              "title": null
+            }
+          },
+          "y": {
+            "field": "displayPercentage",
+            "type": "quantitative",
+            "axis": null
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "middle",
+          "dy": -35,
+          "color": "white",
+          "fontSize": 16,
+          "fontWeight": "bold"
+        },
+        "encoding": {
+          "x": {"field": "candidate", "type": "nominal", "sort": "-y"},
+          "y": {
+            "field": "displayPercentage",
+            "type": "quantitative",
+            "stack": "normalize"
+          },
+          "text": {"field": "percentageLabel", "type": "nominal"}
+        }
+      }
+    ]
+  }
+  

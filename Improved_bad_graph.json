@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Colombian Presidential Poll Results",
+    "subtitle": "April 2021 - Centro Nacional de Consultoría",
+    "fontSize": 20,
+    "subtitleFontSize": 14,
+    "anchor": "start"
+  },
+  "width": 500,
+  "height": 350,
+  "data": {
+    "values": [
+      {"candidate": "Gustavo Petro", "percentage": 23},
+      {"candidate": "Sergio Fajardo", "percentage": 12},
+      {"candidate": "Marta Lucía Ramírez", "percentage": 9},
+      {"candidate": "Iván Zuluaga", "percentage": 6},
+      {"candidate": "Alejandro Char", "percentage": 6},
+      {"candidate": "Enrique Peñalosa", "percentage": 5}
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.percentage + '%'",
+      "as": "percentageLabel"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "candidate",
+      "type": "nominal",
+      "sort": "-y",
+      "axis": {
+        "labelAngle": -30, 
+        "labelFontSize": 14,
+        "title": null
+      }
+    },
+    "y": {
+      "field": "percentage",
+      "type": "quantitative",
+      "axis": {
+        "title": "Percentage (%)",
+        "titleFontSize": 14,
+        "labelFontSize": 14,
+        "grid": true,
+        "ticks": true,
+        "tickCount": 5 
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#202ca6",
+        "width": 45
+      },
+      "encoding": {
+        "y": {"field": "percentage"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -15,
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "color": "white"
+      },
+      "encoding": {
+        "text": {"field": "percentageLabel", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "style": {
+      "guide-label": {"fontSize": 12},
+      "guide-title": {"fontSize": 14}
+    }
+  }
+}
