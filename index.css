@@ -1,67 +1,68 @@
-/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
-/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
-
-/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
-
-
-body { /* We can style any HTML element by using its name - here we're styling the body */
-  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-  /* we want a white page, that's centered and not too wide */
-  background-color: #fff;
-  margin:0 auto;
-  max-width: 800px;
-  padding-top: 60px;
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e7f5fe; /* Light blue background */
+    margin: 0;
 }
 
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-weight: 600;
+/* Center content within a container */
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fafa; /* White background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+    border: 2px solid #5dade2; /* Light blue border */
 }
 
-/* We want the headings to be a little bigger than the paragraph text */
-.big { /* This is the class we created in the HTML file, you can use it to style any element */
-  font-size: 2.5em;
+/* Styling for the heading */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Dark blue-gray for heading */
 }
 
-h2 {
-  font-size: 1.75em;
-}
-
-.small {
-  font-size: 1.25em;
-}
-
-/* Paragraph */
+/* Styling for the paragraph */
 p {
-  margin-bottom: 1em;
-  font-weight: 300;
+    font-size: 1.2em;
+    color: #34495e; /* Medium blue-gray for text */
 }
 
-section {
-  margin-bottom: 2.5em;  /* We want a little more space between sections */
+/* Button styling */
+button {
+    background-color: #5dade2; /* Medium blue */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Links */
-/* We want the links to be a little more visible  and a different color */
+/* Hover effect for buttons */
+button:hover {
+    background-color: #3498db; /* Darker blue for hover effect */
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Styling for links (removes underline and inherits button style) */
 a {
-  color: #065f46;
-  text-decoration: none;
+    text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-  
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
+/* Add a small accent at the bottom of the container */
+.container::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #5dade2; /* Accent color */
+    margin: 20px auto 0;
+    border-radius: 5px;
 }

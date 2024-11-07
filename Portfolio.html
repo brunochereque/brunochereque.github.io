@@ -1,0 +1,227 @@
+<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
+<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
+<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
+<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
+
+<!-- Take a look around and make your own copy to adapt for your own use. -->
+
+<!-- This is a comment -->
+<!-- Comments are not displayed in the browser -->
+<!-- They can be used to leave notes in the code -->
+
+<!DOCTYPE html>
+<html> 
+    <!-- HTML is heirarchial: tags like this define elements on the page. 
+    Each tag does something different. For example:
+        - The <html> tag defines the whole document.
+        - The <h1> tag defines a large heading
+        - The <p> tag defines a paragraph
+        - Tags appear as an opening <div> and closing </div> pair
+    -->
+
+<head>    
+    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+
+    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
+    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="Portfolio.css">
+    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
+</head>
+
+<body> 
+    <div class="container">
+        <h1>Portfolio</h1>
+        <div>
+            <a href="index.html">
+                <button>Home</button>
+            </a>
+            <a href="portfolio.html">
+                <button>Portfolio</button>
+            </a>
+            <a href="project.html">
+                <button>Project</button>
+            </a>
+        </div>
+    </div>
+    
+
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 1: GDP and Life Expectancy</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Here we are analyzing the relationship between GDP and Life Expectancy across continents in 2022.
+            </p>
+        </div>
+        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    </div>
+    <!-- We are adding a new section, one of Richard's graphs -->
+    <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 1: Declining population</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Here we are seing the forecasted cumulative change in population in developed countries from 2020 to 2100.
+            </p>
+        </div>
+        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <div class="container">
+
+    <section>
+        <div class="chart-description">
+            <h2>CC 2: Economic Observatory chart 1 Unemployment rate in the UK</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Here we are analyzing UK unemployment rate from 1970 to 2024.
+            </p>
+        </div>
+        <figure id="uk_ue"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 2: Economic Observatory chart 2 Job vacancies the UK</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Here we are analyzing UK job vancancies from 2000 to 2024.
+            </p>
+        </div>
+        <figure id="uk_jobv"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <h2>CC 3: Festival of economics: Under-performing: How can we boost Britain’s low productivity?</h2>
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+        An interesting topic presented at the festival is the underperforming of UK in terms of productivity, here we present to charts that support that statement.</p>
+        </section>
+    </div>
+    <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 3: UK productivity across economic sectors</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                As we can see, the lowest productivite sector is agriculture, though more relevant is the productivity decline in the services sector which is highly representative in UK's economy. 
+            </p>
+        </div>
+        <figure id="uk_productivity"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 3: Service sector productivity within UK peer countries</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                When compared to EU peers, the relative productivity (output/worker) in the UK is much lower and not showing signs of recovery. 
+            </p>
+        </div>
+        <figure id="UK_Peers_productivity"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 4: Badly designed chart</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This graph erroneously shows the results of the polls for the 2021 Colombian presidential campaign, graphically reducing the difference between Gustavo Petro and his competitors. 
+            </p>
+        </div>
+        <figure id="Colombia_bad_graph">
+            <img src="Colombia_bad_graph.JPG" alt="Original Colombian Poll Results Chart">
+        </figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 4: Replication of the badly designed chart</h2>
+        </div>
+        <figure id="Replication_bad_graph"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 4: Improvement of badly designed graph</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                I  enhanced accuracy by adjusting bar heights, adding y-axis for clarity on the percentages and added a clear tittle and source information. 
+            </p>
+        </div>
+        <figure id="Improved_graph"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 5: Scrapping inflation data from Peru's Central Bank</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                <a href="https://colab.research.google.com/drive/1DkUtqUFD-cAZYD3tl8lJwR6JOnPFYCVB#scrollTo=2hS7s_j0ZsCs" target="_blank">
+                    Click here
+                </a> to access my colab code with the scraping process. I chose this site because it provides historical inflation data for Lima, Peru, which is useful for economic analysis.
+            </p>
+        </div>
+        <figure id="Scrapped_graph"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+
+    <!-- Do you want to add more sections? -->
+        <!-- Try copying pasting the section above -->
+        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
+        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+
+
+    <!-- This is a script, it's a way to run JavaScript code on the page -->
+    <script>
+        // This is a comment in JavaScript - it's a different language to HTML and CSS
+
+        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_2_spec = "wk1_declining_population.json"                                                                                                              // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        
+
+        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#uk_ue', "wk2_uk_ue.json")
+        vegaEmbed('#uk_jobv', "wk2_uk_jobv.json")
+        vegaEmbed('#uk_productivity', "UK_Productivity.json")
+        vegaEmbed('#UK_Peers_productivity', "SS_Productivity_EU.json")
+        vegaEmbed('#Replication_bad_graph', "Replication_bad_graph.json")
+        vegaEmbed('#Improved_graph', "Improved_bad_graph.json")
+        vegaEmbed('#Scrapped_graph', "CC5_Inflation_Graph.json")
+        // Do you want to add more graphs?
+        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
+        // e.g. 
+        // let figure_3_spec = ...
+        // vegaEmbed('#Location3', figure_3_spec)
+
+
+    </script>
+
+</body>
+    
+</html>

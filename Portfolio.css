@@ -1,0 +1,56 @@
+/* Styling for the body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e7f5fe; /* Light blue background */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Center content within the container */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Centering the main content */
+.content-container {
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the content */
+  text-align: center; /* Center the text */
+  padding: 20px;
+}
+
+/* Styling for sections */
+section {
+  margin-bottom: 30px; /* Adds space between sections */
+}
+/* Button styling */
+button {
+  background-color: #5dade2; /* Medium blue */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 10px 5px; /* Adds space between buttons */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #3498db; /* Darker blue */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Styling for links (removes underline and inherits button style) */
+a {
+  text-decoration: none;
+}
+
+/* Styling for the heading */
+h1 {
+  font-size: 2.5em;
+  color: #2c3e50; /* Dark blue-gray */
+  margin-bottom: 20px;
+}
