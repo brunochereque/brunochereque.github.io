@@ -1,0 +1,115 @@
+<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
+<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
+<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
+<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
+
+<!-- Take a look around and make your own copy to adapt for your own use. -->
+
+<!-- This is a comment -->
+<!-- Comments are not displayed in the browser -->
+<!-- They can be used to leave notes in the code -->
+
+<!DOCTYPE html>
+<html> 
+    <!-- HTML is heirarchial: tags like this define elements on the page. 
+    Each tag does something different. For example:
+        - The <html> tag defines the whole document.
+        - The <h1> tag defines a large heading
+        - The <p> tag defines a paragraph
+        - Tags appear as an opening <div> and closing </div> pair
+    -->
+
+<head>    
+    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
+
+    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
+    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="Portfolio.css">
+    <title>My Project</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    
+    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        
+    </style>
+</head>
+
+<body> 
+    <div class="container">
+        <h1>Portfolio</h1>
+        <div>
+            <a href="index.html">
+                <button>Home</button>
+            </a>
+            <a href="Portfolio.html">
+                <button>Portfolio</button>
+            </a>
+            <a href="Project.html">
+                <button>Project</button>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <h2> How have the patterns of mental health disorders evolved in the UK over the past decade, 
+            and what role do socioeconomic factors play in these trends?</h2>
+            </div>   
+
+            <div class="container">
+                <h2> Project aim</h2>
+
+                <p>The aim of this project is to investigate historical and regional patterns in depression across the UK, focusing on historial and regional trends in prevalence, and service utilization. By examining data from the Fingertips API, I seek to uncover key insights into how mental health outcomes vary over time and by region, and how socioeconomic factors such as deprivation contribute to these disparities.
+            </p>
+                <p>The analysis begins with a comprehensive look at the historical trends in depression prevalence over the past decade to establish context. Next, regional disparities are mapped to highlight areas with disproportionately high or low rates of mental health disorders. Building on this, the project explores the correlation between mental health outcomes and deprivation levels to identify socioeconomic drivers of mental health issues.
+            </p>
+                <p>To further understand service access, the project compares mental health service utilization rates (e.g., IAPT referrals) against regional mental health prevalence. Finally, a comparison of estimated versus diagnosed cases sheds light on potential underreporting and barriers to mental health care in certain regions.
+            </p>
+                <p> This research aims to inform policymakers and stakeholders about critical gaps in mental health services and areas requiring targeted intervention to improve public health outcomes.
+            </p>
+
+                    </div>   
+
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>Chart 1: Upward Trend in Depression Prevalence in England (2012-2022): Higher Levels in Most Deprived Areas </h2>
+                 </div>
+        <figure id="Depression_trends"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    </div>
+    <!-- We are adding a new section, one of Richard's graphs -->
+    <div class="container">
+    <section>
+        
+
+    <!-- Do you want to add more sections? -->
+        <!-- Try copying pasting the section above -->
+        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
+        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+
+
+    <!-- This is a script, it's a way to run JavaScript code on the page -->
+    <script>
+   
+
+        vegaEmbed('#Depression_trends', "Chart_1_dep_prev.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        
+        // Do you want to add more graphs?
+        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
+        // e.g. 
+        // let figure_3_spec = ...
+        // vegaEmbed('#Location3', figure_3_spec)
+
+
+    </script>
+
+</body>
+    
+</html>
