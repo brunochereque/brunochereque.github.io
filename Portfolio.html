@@ -202,6 +202,23 @@
     </section>
 </div>
 
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 8: Big data. Extracting a story from millions of prices</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+             The first graph shows the weekly mean price trend for potato crisps 25-50g. To do so I filter the data and calculated the weekly mean price using the to_peeriod function and groupby mean.
+            </p>
+        </div>
+        <figure id="bigdata_1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+            The second graph shows the association between the price of potato crisps 25-50g and premium potato crisps. To make it I filter the data for both products, calculate the weekly mean price and create a scatter with a fitted regression line.
+           </p>
+        
+        
+        <figure id="bigdata_2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -228,6 +245,8 @@
         vegaEmbed('#Scrapped_graph', "CC5_Inflation_Graph.json")
         vegaEmbed('#brz_map1', "brazil_map1.json")
         vegaEmbed('#brz_map2', "brazil_map2.json")
+        vegaEmbed('#bigdata_1', "cc8_weekly_mean_price_chart.json")
+        vegaEmbed('#bigdata_2', "cc8_scatterplot.json")
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
