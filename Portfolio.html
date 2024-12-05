@@ -189,6 +189,19 @@
     </section>
 </div>
 
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 7: Base maps and choropleths</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+             The first map outlines Brazil states with tooltips, the second one is a choropleth with its population distribution. Sao Paulo is the most populated state.
+            </p>
+        </div>
+        <figure id="brz_map1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="brz_map2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -213,6 +226,8 @@
         vegaEmbed('#Replication_bad_graph', "Replication_bad_graph.json")
         vegaEmbed('#Improved_graph', "Improved_bad_graph.json")
         vegaEmbed('#Scrapped_graph', "CC5_Inflation_Graph.json")
+        vegaEmbed('#brz_map1', "brazil_map1.json")
+        vegaEmbed('#brz_map2', "brazil_map2.json")
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
