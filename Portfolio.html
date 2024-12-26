@@ -207,7 +207,7 @@
         <div class="chart-description">
             <h2>CC 8: Big data. Extracting a story from millions of prices</h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
-             The first graph shows the weekly mean price trend for potato crisps 25-50g. To do so I filter the data and calculated the weekly mean price using the to_peeriod function and groupby mean.
+             The first graph shows the weekly mean price trend for potato crisps 25-50g. To do so I filter the data and calculated the weekly mean price using the to_period function and groupby mean.
             </p>
         </div>
         <figure id="bigdata_1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -219,6 +219,35 @@
         <figure id="bigdata_2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 </div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 9: Analytics charts (1/2). Distribution of Depresion Prevalence in the UK (2023)</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+                The distribution of depression prevalence in the UK looks like a normal distribution, with the districs and unitary authorities centred around 13% prevalence.
+            </p>
+        </div>
+        <figure id="hist_dep"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="hist_dep"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 9: Analytics charts (2/2). Scatter plot: Depression prevalence (2023) and Deprivation Score (2019) in the UK</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+                There is a positive (though weak) association between deprivation scores and depression prevalence at the district and unitary authority level in the UK.
+            </p>
+        </div>
+        <figure id="scatter_dep"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="scatter_dep"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
+
+
+
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -247,6 +276,8 @@
         vegaEmbed('#brz_map2', "brazil_map2.json")
         vegaEmbed('#bigdata_1', "cc8_weekly_mean_price_chart.json")
         vegaEmbed('#bigdata_2', "cc8_scatterplot.json")
+        vegaEmbed('#hist_dep', "Chart_6_histogram.json")
+        vegaEmbed('#scatter_dep', "cc9_scatter_with_deprivation.json")
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
