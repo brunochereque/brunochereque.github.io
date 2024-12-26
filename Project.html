@@ -84,10 +84,59 @@
         <figure id="Depression_trends"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
     </div>
-    <!-- We are adding a new section, one of Richard's graphs -->
+
     <div class="container">
-    <section>
+        <section>
+            <div class="chart-description">
+                <h2>Chart 2: Majority of districts cluster around 13% prevalence rate, but the tails denote the existence of inequalities </h2>
+                     </div>
+            <figure id="Depression_histogram"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        </div>
+  
+       <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+       <div class="container">
+        <section>
+            <div class="chart-description">
+                <h2>Chart 3: Higher depression prevalence in northern and central regions, while lower prevalence in the southern regions and London area</h2>
+                     </div>
+            <figure id="Depression_map"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        </div>
+     
+            
+       <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+       <div class="container">
+        <section>
+            <div class="chart-description">
+                <h2>Chart 4: Positive (weak) correlation between deprivation scores and depression prevalence</h2>
+                     </div>
+            <figure id="corr_deprivation"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        </div>
         
+            
+  <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+       <div class="container">
+        <section>
+            <div class="chart-description">
+                <h2>Chart 5: Positive correlation between employment deprivation scores and depression prevalence</h2>
+                     </div>
+            <figure id="corr_employment"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        </div>
+      
+
+  <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+  <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>Chart 6: Weak positive association between crime deprivation and depression prevalence</h2>
+                 </div>
+        <figure id="corr_crime"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    </div>
+   
 
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -100,12 +149,13 @@
    
 
         vegaEmbed('#Depression_trends', "Chart_1_dep_prev.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
+        vegaEmbed('#Depression_histogram', "Chart_6_histogram.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Depression_map', "Chart_2_dep_map.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#corr_deprivation', "Chart_3_scatter_with_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#corr_employment', "Chart_4_scatter_with_emp_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#corr_crime', "Chart_5_scatter_with_crime_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+      
+
 
 
     </script>
