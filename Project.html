@@ -137,7 +137,15 @@
     </section>
     </div>
    
-
+  <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+  <div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>Chart 7: Improving Access to Psychological Therapies (IAPT) service referrals, treatment and completion rates peaked in 2017, followed by slight declines.</h2>
+                 </div>
+        <figure id="IAPT_service"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    </div>
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -154,6 +162,7 @@
         vegaEmbed('#corr_deprivation', "Chart_3_scatter_with_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#corr_employment', "Chart_4_scatter_with_emp_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#corr_crime', "Chart_5_scatter_with_crime_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#IAPT_service', "chart7_IAPT_referalsentries.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
       
 
 
