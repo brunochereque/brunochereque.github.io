@@ -246,9 +246,31 @@
     </section>
 </div>
 
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 10: Interactive visualisation (1/2). Line Chart with Sliders: Peruvian Real GDP Index (2007=100) Over Time</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+                The line chart shows the upward trend of Peru’s Real GDP Index (2007=100) over time, with occasional fluctuations and growth resilience.
+            </p>
+        </div>
+        <figure id="gdp_trend"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="gdp_trend"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
 
-
-
+<div class="container">
+    <section>
+        <div class="chart-description">
+            <h2>CC 10: Interactive visualisation (2/2). Line Chart with dropdown menu: Mineral prices</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->  
+                The following chart shows the price trends of main minerals exported worldwide.
+            </p>
+        </div>
+        <figure id="mineral_ddmenu"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="mineral_ddmenu"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+</div>
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -278,6 +300,8 @@
         vegaEmbed('#bigdata_2', "cc8_scatterplot.json")
         vegaEmbed('#hist_dep', "Chart_6_histogram.json")
         vegaEmbed('#scatter_dep', "cc9_scatter_with_deprivation.json")
+        vegaEmbed('#gdp_trend', "line_chart_with_sliders.json")
+        vegaEmbed('#mineral_ddmenu', "cc10_dropdown_linechart.json")
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
         // e.g. 
