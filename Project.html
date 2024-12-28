@@ -56,6 +56,7 @@
             </a>
         </div>
     </div>
+
     <div class="container">
         <h2> How have the patterns of mental health disorders evolved in the UK over the past decade, 
             and what role do socioeconomic factors play in these trends?</h2>
@@ -64,14 +65,35 @@
             <div class="container">
                 <h2> Project aim</h2>
 
-                <p>The aim of this project is to investigate historical and regional patterns in depression across the UK, focusing on historial and regional trends in prevalence, and service utilization. By examining data from the Fingertips API, I seek to uncover key insights into how mental health outcomes vary over time and by region, and how socioeconomic factors such as deprivation contribute to these disparities.
+                <p>The aim of this project is to investigate historical and regional patterns in depression across the UK, focusing on depression prevalence, service utilisation and outcomes. By examining data from the Fingertips API, I seek to uncover key insights into how mental health outcomes vary over time and by region, and how socioeconomic factors such as deprivation contribute to these disparities.
             </p>
-                <p>The analysis begins with a comprehensive look at the historical trends in depression prevalence over the past decade to establish context. Next, regional disparities are mapped to highlight areas with disproportionately high or low rates of mental health disorders. Building on this, the project explores the correlation between mental health outcomes and deprivation levels to identify socioeconomic drivers of mental health issues.
+                <p>The analysis begins with a comprehensive look at the historical trends in depression prevalence over the past decade to establish context. Next, the distribution of depression among districts and regional disparities are mapped to highlight the existence of inequalities in depression across the UK. Building on this, the project explores the correlation between mental health outcomes and deprivation levels to graphically identify socioeconomic drivers of mental health issues.
             </p>
-                <p>To further understand service access, the project compares mental health service utilization rates (e.g., IAPT referrals) against regional mental health prevalence. Finally, a comparison of estimated versus diagnosed cases sheds light on potential underreporting and barriers to mental health care in certain regions.
+                <p>To further understand service access, the project analyses the trend of mental health service utilisation rates (Improving Access to Psychological Therapies (IAPT) service referrals, treatment and completion). Finally, to explore outcomes, this analysis presents recovery rates and depression score improvement (Patient Health Questionnaire) using an interactive dropdown chart.
             </p>
                 <p> This research aims to inform policymakers and stakeholders about critical gaps in mental health services and areas requiring targeted intervention to improve public health outcomes.
             </p>
+
+            <h2> Data and Sources</h2>
+
+            <p>For this project, I used data from the NHS Fingertips API, a repository of public health indicators in England. This API simplifies data access by integrating directly with Python through the fingertips_py package. The detailed documentation helped me to understand its use and allowed me to obtain indicators efficiently.
+        </p>
+            <p>The API provides information related to depression outcomes, including the prevalence of depression, deprivation scores (e.g. crime and employment) and Improving Access to Psychological Therapies (IAPT) indicators such as referrals, treatment completion, recovery rates and PHQ scores (which measure the severity of depression at baseline and at the end of treatment). I used these variables at national, regional and district levels to explore patterns of inequality and health outcomes.
+        </p>
+            <p>To obtain the information I had to query profiles, identify indicator IDs and request through the API the relevant databases for my visualisations. The process was automated using Python, which allows for reproducibility through the scripts shared on my GitHub account. However, difficulties arose due to missing observations in the collected data, for certain variables and years. The variables chosen are those with the most information available and align with the narrative of the project.  JSON files are shared on GitHub to facilitate chart replication.
+        </p>
+
+        <h2> Challenges in Data Cleaning and Analysis</h2>
+
+        <p>Filtering and cleaning data were critical steps in this project. The data from the API resulted in large datasets containing information across various geographic levels, deprivation deciles, and demographic categories, often exceeding the project's scope. Identifying and filtering for relevant data required significant effort, particularly for aligning datasets with the intended visualizations. This process also involved handling duplicates and addressing missing values to ensure accurate insights.
+    </p>
+        <p>Merging datasets to create scatter plots and other visualizations presented additional challenges, especially when variables were collected at different frequencies or geographic levels. Aggregation was necessary for some indicators, such as service access rates, where quarterly data were averaged to produce yearly values.
+    </p>
+        <p>Developing interactive charts and maps were particularly challenging for me due to my limited experience with those features. For instance, issues arose with geojson files used for maps, where initial outputs displayed data incorrectly (e.g., inverted maps). Correcting these formatting issues was crucial to ensure accurate visual representation.
+    </p>
+
+    <p>Tools such as pandas were indispensable for data cleaning and aggregation, enabling precise formatting for visualization in json format. By iteratively testing and refining interactive components, including dropdown menus and sliders, I overcame technical difficulties and produced visualizations that align with the project’s aim.
+    </p>
 
                     </div>   
 
@@ -146,6 +168,30 @@
         <figure id="IAPT_service"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
     </div>
+
+    <div class="container">
+        <section>
+            <div class="chart-description">
+                <h2>Chart 8: NHS IAPT services show consistent recovery rates and effective reductions in depression severity across all years —as seen in recovery rates and PHQ (Patient Health Questionnaire) results that measure depression severity.</h2>
+                     </div>
+            <figure id="cc8_ddmenu"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        </section>
+        </div>
+
+        <div class="container">
+            <h2> Conclussion</h2>
+
+            <p>This project provides a detailed overview of depression trends, mental health disparities and treatment outcomes in England. The data highlight a trend of increasing depression, which is specifically higher in the most deprived deciles. In addition, persistent inequalities in mental health are observed, with regions of higher deprivation showing a significantly higher prevalence of depression. These findings underline the importance of addressing the socio-economic factors that drive disparities in mental health outcomes.
+        </p>
+            <p>Analysis of IAPT service utilisation shows a notable peak in referrals and treatment around 2017, suggesting increased accessibility during that period, although completion rates were much lower. However, the subsequent decline raises questions about potential barriers to access. Recovery rates demonstrate the success of the IAPT programme, with a significant proportion of individuals achieving positive outcomes. In addition, PHQ scores, which measure the severity of depression, show consistent reductions from the beginning to the end of treatment, reflecting the effectiveness of the IAPT interventions.
+
+        </p>
+            <p>Overall, this project identifies the regions and populations most affected by depression and shows how effectively public services are meeting these needs. These insights are essential to highlight where further efforts are needed to reduce mental health inequalities.
+        </p>
+        
+    </div>
+
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -163,6 +209,7 @@
         vegaEmbed('#corr_employment', "Chart_4_scatter_with_emp_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#corr_crime', "Chart_5_scatter_with_crime_deprivation.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#IAPT_service', "chart7_IAPT_referalsentries.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#cc8_ddmenu', "chart8_NHS_outcomes.json") // We're using the vegaEmbed function to put a graph in the element with id figure_1
       
 
 

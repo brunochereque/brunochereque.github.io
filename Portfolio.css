@@ -4,26 +4,39 @@ body {
   background-color: #e7f5fe; /* Light blue background */
   margin: 0;
   padding: 20px;
+  line-height: 1.8; /* Better readability with increased spacing */
+  color: #333; /* Neutral text color */
 }
 
-/* Center content within the container */
+/* Main container with improved text alignment */
 .container {
-  text-align: center;
+  max-width: 1000px; /* Wider content container */
+  margin: 0 auto; /* Center container horizontally */
   padding: 20px;
 }
 
-/* Centering the main content */
-.content-container {
-  max-width: 800px; /* Adjust the max-width as needed */
-  margin: 0 auto; /* Center the content */
-  text-align: center; /* Center the text */
-  padding: 20px;
-}
-
-/* Styling for sections */
+/* Sections styling for better spacing */
 section {
-  margin-bottom: 30px; /* Adds space between sections */
+  margin-bottom: 40px; /* Adds more space between sections */
+  text-align: left; /* Align text to the left */
 }
+
+/* Styling for headings */
+h1, h2 {
+  font-size: 2.5em; /* Larger heading size */
+  color: #2c3e50; /* Dark blue-gray */
+  text-align: left; /* Align headings to the left */
+  margin-bottom: 15px;
+}
+
+/* Paragraph styling with increased font size */
+p {
+  text-align: left; /* Align paragraphs to the left */
+  margin-bottom: 20px; /* Adds spacing between paragraphs */
+  font-size: 1.1em; /* Increase text size slightly for better readability */
+  line-height: 1.8; /* Increased line height */
+}
+
 /* Button styling */
 button {
   background-color: #5dade2; /* Medium blue */
@@ -46,11 +59,41 @@ button:hover {
 /* Styling for links (removes underline and inherits button style) */
 a {
   text-decoration: none;
+  color: inherit; /* Inherit the color of the text */
 }
 
-/* Styling for the heading */
-h1 {
+/* Improved title styling */
+.title {
   font-size: 2.5em;
-  color: #2c3e50; /* Dark blue-gray */
-  margin-bottom: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: left; /* Align title to the left */
+}
+
+/* Subtitle styling */
+.subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d; /* Lighter gray */
+  margin-bottom: 30px;
+  text-align: left; /* Align subtitle to the left */
+}
+
+/* Chart container styling */
+.chart-container {
+  max-width: 1200px; /* Set chart width */
+  height: auto; /* Automatically adjust height */
+  margin: 20px auto; /* Center charts horizontally */
+  padding: 20px; /* Add padding around the charts */
+  background-color: #ffffff; /* Optional: Add a white background for contrast */
+  border: 1px solid #dcdcdc; /* Optional: Add a light gray border */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* Adjust chart sizes for responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    max-width: 100%; /* Make charts fit smaller screens */
+    height: auto; /* Adjust height for small screens */
+  }
 }
