@@ -81,19 +81,23 @@ a {
 
 /* Chart container styling */
 .chart-container {
-  max-width: 1200px; /* Set chart width */
-  height: auto; /* Automatically adjust height */
+  width: 100%; /* Allow charts to use the full width of their parent */
+  max-width: 1200px; /* Set a maximum size for large screens */
+  height: 500px; /* Explicitly set height */
   margin: 20px auto; /* Center charts horizontally */
   padding: 20px; /* Add padding around the charts */
   background-color: #ffffff; /* Optional: Add a white background for contrast */
   border: 1px solid #dcdcdc; /* Optional: Add a light gray border */
   border-radius: 5px; /* Optional: Rounded corners */
+  display: flex; /* Flexbox to align charts */
+  justify-content: center; /* Center align horizontally */
+  align-items: center; /* Center align vertically */
 }
 
 /* Adjust chart sizes for responsiveness */
 @media (max-width: 768px) {
   .chart-container {
     max-width: 100%; /* Make charts fit smaller screens */
-    height: auto; /* Adjust height for small screens */
+    height: 400px; /* Adjust height for smaller screens */
   }
 }
